@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { AddTodo } from "./AddTodo";
 import { Todo } from "../models/Todos";
+import { Todos } from "./Todos";
 
 export const TodoApp = () => {
   const [todos, setTodos] = useState<Todo[]>([
@@ -17,6 +18,7 @@ export const TodoApp = () => {
   return (
     <>
       <AddTodo addTodo={addTodo} />
+      <Todos todos={todos} />
     </>
   );
 };
