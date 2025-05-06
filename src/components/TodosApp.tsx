@@ -14,11 +14,15 @@ export const TodoApp = () => {
     setTodos([...todos, new Todo(newTodo.task, newTodo.done)]);
   };
 
-  console.log(todos);
+  const removeTodo = (id: number) => {
+    setTodos(todos.filter((t) => t.id !== id));
+  };
+
+  //   console.log(todos);
   return (
     <>
       <AddTodo addTodo={addTodo} />
-      <Todos todos={todos} />
+      <Todos todos={todos} removeTodo={removeTodo} />
     </>
   );
 };

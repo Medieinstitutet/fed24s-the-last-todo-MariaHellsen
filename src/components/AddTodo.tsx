@@ -32,7 +32,9 @@ export const AddTodo = (props: AddTodoProps) => {
   return (
     <>
       <form className="oneTodo" onSubmit={handleSubmit}>
-        <label htmlFor="task">Write your task here</label>
+        <div>
+          <label htmlFor="task">Write your task here</label>
+        </div>
         <input
           type="text"
           id="task"

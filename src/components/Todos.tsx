@@ -1,23 +1,36 @@
-import { useState } from "react";
 import { Todo } from "../models/Todos";
 
 type TodosProps = {
   todos: Todo[];
+  removeTodo: (id: number) => void;
 };
-export const Todos = (props: TodosProps) => {
-  const [todos, setTodos] = useState<Todo[]>([]);
+export const Todos = ({ todos, removeTodo }: TodosProps) => {
+  //   const [todos, setTodos] = useState<Todo[]>([]);
 
   return (
     <>
-      {props.todos.map((t) => (
-        <ul>
-          <li>{t.task}</li>
-          {t.done ? (
-            <div className="done"></div>
-          ) : (
-            <div className="notDone"></div>
-          )}
-        </ul>
+      {todos.map((t) => (
+        <div key={t.id}>
+          <ul>
+            <li>{t.task}</li>
+            {t.done ? (
+              <div className="done"></div>
+            ) : (
+              <div className="notDone"></div>
+            )}
+          </ul>
+          <div>
+            <button className="done">Done</button>
+            <button
+              className="remove"
+              onClick={() => {
+                removeTodo(t.id);
+              }}
+            >
+              Remove
+            </button>
+          </div>
+        </div>
       ))}
     </>
   );
