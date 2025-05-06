@@ -9,9 +9,11 @@ export const TodoApp = () => {
     new Todo("Read Lifting state up", false, 3),
   ]);
 
-  const addTodo = () => {
-    setTodos([...todos, new Todo("", false)]);
+  const addTodo = (newTodo: Todo) => {
+    setTodos([...todos, new Todo(newTodo.task, newTodo.done)]);
   };
+
+  console.log(todos);
   return (
     <>
       <AddTodo addTodo={addTodo} />
