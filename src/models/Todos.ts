@@ -1,7 +1,6 @@
 export class Todo {
-  constructor(
-    public task: string,
-    public done?: boolean,
-    public id: number = 0
-  ) {}
+  id: number;
+  constructor(public task: string, public done?: boolean, customId?: number) {
+    this.id = customId !== undefined ? customId : Date.now();
+  }
 }

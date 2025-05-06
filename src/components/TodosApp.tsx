@@ -9,10 +9,12 @@ export const TodoApp = () => {
     new Todo("Read Lifting state up", false, 3),
   ]);
 
-   };
+  const addTodo = () => {
+    setTodos([...todos, new Todo("", false)]);
+  };
   return (
     <>
-      <AddTodo todo={todos} />
+      <AddTodo addTodo={addTodo} />
     </>
   );
 };

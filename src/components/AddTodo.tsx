@@ -26,6 +26,7 @@ export const AddTodo = (props: AddTodoProps) => {
     e.preventDefault();
 
     props.addTodo(todo);
+    console.log(todo);
   };
 
   return (
