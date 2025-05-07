@@ -18,11 +18,27 @@ export const TodoApp = () => {
     setTodos(todos.filter((t) => t.id !== id));
   };
 
-  //   console.log(todos);
+  const changeTodoStatus = (id: number) => {
+    setTodos(
+      todos.map((todo) => {
+        if (todo.id === id) {
+          return { ...todo, done: !todo.done };
+        }
+        return todo;
+      })
+    );
+  };
+
+  console.log(todos);
+
   return (
     <>
       <AddTodo addTodo={addTodo} />
-      <Todos todos={todos} removeTodo={removeTodo} />
+      <Todos
+        todos={todos}
+        removeTodo={removeTodo}
+        changeTodoStatus={changeTodoStatus}
+      />
     </>
   );
 };

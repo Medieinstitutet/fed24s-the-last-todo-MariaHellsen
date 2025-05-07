@@ -3,24 +3,31 @@ import { Todo } from "../models/Todos";
 type TodosProps = {
   todos: Todo[];
   removeTodo: (id: number) => void;
+  changeTodoStatus: (id: number) => void;
 };
-export const Todos = ({ todos, removeTodo }: TodosProps) => {
-  //   const [todos, setTodos] = useState<Todo[]>([]);
 
+export const Todos = ({ todos, removeTodo, changeTodoStatus }: TodosProps) => {
   return (
     <>
       {todos.map((t) => (
         <div key={t.id}>
           <ul>
             <li>{t.task}</li>
-            {t.done ? (
+            {/* {t.done ? (
               <div className="done"></div>
             ) : (
               <div className="notDone"></div>
-            )}
+            )} */}
           </ul>
           <div>
-            <button className="done">Done</button>
+            <button
+              className="done"
+              onClick={() => {
+                changeTodoStatus(t.id);
+              }}
+            >
+              Done
+            </button>
             <button
               className="remove"
               onClick={() => {
