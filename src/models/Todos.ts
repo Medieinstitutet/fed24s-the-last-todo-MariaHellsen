@@ -4,3 +4,9 @@ export class Todo {
     this.id = customId !== undefined ? customId : Date.now();
   }
 }
+
+export const defaultValue: Todo = {
+  task: "",
+  done: false,
+  id: 0,
+};

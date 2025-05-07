@@ -20,11 +20,11 @@ export const TodoApp = () => {
 
   const changeTodoStatus = (id: number) => {
     setTodos(
-      todos.map((todo) => {
-        if (todo.id === id) {
-          return { ...todo, done: !todo.done };
+      todos.map((t) => {
+        if (t.id === id) {
+          return { ...t, done: !t.done };
         }
-        return todo;
+        return t;
       })
     );
   };

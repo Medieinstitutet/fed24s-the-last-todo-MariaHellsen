@@ -1,16 +1,12 @@
 import { ChangeEvent, FormEvent, useState } from "react";
-import { Todo } from "../models/Todos";
+import { defaultValue, Todo } from "../models/Todos";
 
 type AddTodoProps = {
   addTodo: (t: Todo) => void;
 };
 
 export const AddTodo = (props: AddTodoProps) => {
-  const [todo, setTodo] = useState<Todo>({
-    task: "",
-    done: false,
-    id: 0,
-  });
+  const [todo, setTodo] = useState<Todo>(defaultValue);
 
   const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
     if (e.target.type === "text") {
@@ -26,11 +22,13 @@ export const AddTodo = (props: AddTodoProps) => {
     e.preventDefault();
 
     props.addTodo(todo);
+    setTodo(defaultValue);
     console.log(todo);
   };
 
   return (
     <>
+      <h2>Todo List</h2>
       <form className="oneTodo" onSubmit={handleSubmit}>
         <div>
           <label htmlFor="task">Write your task here</label>
