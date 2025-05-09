@@ -8,7 +8,7 @@ export const TodoApp = () => {
   const [todos, setTodos] = useState<Todo[]>([
     new Todo("Learn State", false, 1),
     new Todo("Repeat props", false, 2),
-    new Todo("Read Lifting state up", false, 3),
+    new Todo("Explore Tailwind", false, 3),
   ]);
 
   const addTodo = (newTodo: Todo) => {

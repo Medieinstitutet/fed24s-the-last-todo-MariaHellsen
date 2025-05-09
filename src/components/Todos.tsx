@@ -19,23 +19,25 @@ export const Todos = ({ todos, removeTodo, changeTodoStatus }: TodosProps) => {
           <ul className="tasks">
             {activeTodos.map((t) => (
               <li className="task" key={t.id}>
-                {t.task}
-                <button
-                  className="button done"
-                  onClick={() => {
-                    changeTodoStatus(t.id);
-                  }}
-                >
-                  Done
-                </button>
-                <button
-                  className="button remove"
-                  onClick={() => {
-                    removeTodo(t.id);
-                  }}
-                >
-                  Remove
-                </button>
+                <div className="taskText">{t.task}</div>
+                <div className="taskButtons">
+                  <button
+                    className="button done"
+                    onClick={() => {
+                      changeTodoStatus(t.id);
+                    }}
+                  >
+                    Done
+                  </button>
+                  <button
+                    className="button remove"
+                    onClick={() => {
+                      removeTodo(t.id);
+                    }}
+                  >
+                    Remove
+                  </button>
+                </div>
               </li>
             ))}
           </ul>
@@ -51,23 +53,25 @@ export const Todos = ({ todos, removeTodo, changeTodoStatus }: TodosProps) => {
           <ul className="tasks">
             {completedTodos.map((t) => (
               <li className="task" key={t.id}>
-                {t.task}
-                <button
-                  className="button undo"
-                  onClick={() => {
-                    changeTodoStatus(t.id);
-                  }}
-                >
-                  Undo
-                </button>
-                <button
-                  className="button remove"
-                  onClick={() => {
-                    removeTodo(t.id);
-                  }}
-                >
-                  Remove
-                </button>
+                <div className="taskText">{t.task}</div>
+                <div className="taskButtons">
+                  <button
+                    className="button undo"
+                    onClick={() => {
+                      changeTodoStatus(t.id);
+                    }}
+                  >
+                    Undo
+                  </button>
+                  <button
+                    className="button remove"
+                    onClick={() => {
+                      removeTodo(t.id);
+                    }}
+                  >
+                    Remove
+                  </button>
+                </div>
               </li>
             ))}
           </ul>

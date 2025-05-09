@@ -32,11 +32,9 @@ export const AddTodo = (props: AddTodoProps) => {
       <i className="fa-solid fa-list"></i>
       <h2>Todo List</h2>
       <form className="oneTodo" onSubmit={handleSubmit}>
-        <div>
-          <label className="instruction" htmlFor="task">
-            Write your task here
-          </label>
-        </div>
+        <label className="instruction" htmlFor="task">
+          Write your task here:
+        </label>
         <input
           className="inputField"
           type="text"

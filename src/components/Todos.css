@@ -23,6 +23,9 @@
   padding-left: 30px;
   text-align: left;
   font-weight: 600;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 li:nth-child(even) {
@@ -49,8 +52,4 @@ li:nth-child(even) {
 
 .fa-solid.fa-circle-check {
   color: rgb(35, 102, 26);
-}
-
-.done .undo .remove {
-  align-self: right;
 }
