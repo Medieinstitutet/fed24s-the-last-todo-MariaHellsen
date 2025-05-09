@@ -1,0 +1,32 @@
+.addTodoButton {
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+.fa-solid.fa-list {
+  color: rgb(35, 102, 26);
+  display: inline-block;
+  animation: myAnimation 10s 6;
+}
+
+@keyframes myAnimation {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.5);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.inputField {
+  padding: 9px;
+  border: 1px solid gray;
+  border-radius: 10px;
+}
+
+.instruction {
+  text-align: left;
+}

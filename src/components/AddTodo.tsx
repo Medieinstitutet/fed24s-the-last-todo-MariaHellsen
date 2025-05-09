@@ -1,5 +1,6 @@
 import { ChangeEvent, FormEvent, useState } from "react";
 import { defaultValue, Todo } from "../models/Todos";
+import "./AddTodo.css";
 
 type AddTodoProps = {
   addTodo: (t: Todo) => void;
@@ -28,18 +29,22 @@ export const AddTodo = (props: AddTodoProps) => {
 
   return (
     <>
+      <i className="fa-solid fa-list"></i>
       <h2>Todo List</h2>
       <form className="oneTodo" onSubmit={handleSubmit}>
         <div>
-          <label htmlFor="task">Write your task here</label>
+          <label className="instruction" htmlFor="task">
+            Write your task here
+          </label>
         </div>
         <input
+          className="inputField"
           type="text"
           id="task"
           value={todo.task}
           onChange={handleChange}
         />
-        <button className="addTodoButton">Add</button>
+        <button className="button addTodoButton">Add</button>
       </form>
     </>
   );

@@ -1,4 +1,5 @@
 import { Todo } from "../models/Todos";
+import "./Todos.css";
 
 type TodosProps = {
   todos: Todo[];
@@ -15,12 +16,12 @@ export const Todos = ({ todos, removeTodo, changeTodoStatus }: TodosProps) => {
       <section className="activeTasks">
         <h3>Tasks To Do</h3>
         {activeTodos.length > 0 ? (
-          <ul>
+          <ul className="tasks">
             {activeTodos.map((t) => (
-              <li key={t.id}>
+              <li className="task" key={t.id}>
                 {t.task}
                 <button
-                  className="done"
+                  className="button done"
                   onClick={() => {
                     changeTodoStatus(t.id);
                   }}
@@ -28,7 +29,7 @@ export const Todos = ({ todos, removeTodo, changeTodoStatus }: TodosProps) => {
                   Done
                 </button>
                 <button
-                  className="remove"
+                  className="button remove"
                   onClick={() => {
                     removeTodo(t.id);
                   }}
@@ -44,14 +45,15 @@ export const Todos = ({ todos, removeTodo, changeTodoStatus }: TodosProps) => {
       </section>
 
       <section className="completedTasks">
+        <i className="fa-solid fa-circle-check"></i>
         <h3>Completed Tasks</h3>
         {completedTodos.length > 0 ? (
-          <ul>
+          <ul className="tasks">
             {completedTodos.map((t) => (
-              <li key={t.id}>
+              <li className="task" key={t.id}>
                 {t.task}
                 <button
-                  className="undo"
+                  className="button undo"
                   onClick={() => {
                     changeTodoStatus(t.id);
                   }}
@@ -59,7 +61,7 @@ export const Todos = ({ todos, removeTodo, changeTodoStatus }: TodosProps) => {
                   Undo
                 </button>
                 <button
-                  className="remove"
+                  className="button remove"
                   onClick={() => {
                     removeTodo(t.id);
                   }}
