@@ -50,7 +50,10 @@ för att köra projektet.
 - C:\Work\AssignmentCorrector\backend\repos\fed24s-the-last-todo-MariaHellsen\src\models\Todos.ts - no-unused-vars - 'task' is defined but never used.,no-unused-vars - 'done' is defined but never used.
 
 ## 🏆 **Betyg: VG**
-📌 **Motivering:** Koden uppfyller samtliga krav för både betygen G och VG. Studenten har skapat en todo-applikation där användaren kan lägga till, ta bort och ändra status på todo-punkter. Lista över uppgifter visas på skärmen med klara och oklara uppgifter separerade, och det finns möjlighet att återställa klara uppgifter. Komponenterna är bra uppdelade med användning av lifting state up och det tillhandahålls ett formulär för att skapa nya todos. CSS är välstrukturerad med flexbox och animationer och Font Awesome används för extra visuell stil.
+📌 **Motivering:** Studentens kod uppfyller alla krav för både G och VG betyg. Den har en hårdkodad lista med todo-punkter som kan presenteras på skärmen inom en strukturerad lista, möjlighet att markera uppgifter som klara vilket tar bort dem från aktiva todo-punkter, och använda 'lifting state up' för komponenthantering. Dessutom kan användaren lägga till nya todos via ett formulär, visa även klara händelser och klicka tillbaka dem som 'oklara', samt sortera todos. Koden har implementerat korrekt användning av ett grafiskt ramverk genom användningen av FontAwesome. CSS är välstrukturerad och visar användning av flex för layouthantering. Dock finns det några förbättringsförslag gällande kodstruktur och användarvänlighet.
 
 💡 **Förbättringsförslag:**  
-Koden är överlag välskriven. Möjliga förbättringar kan inkludera införande av en funktion för att sortera todos (om ordningen behöver bestämmas av användaren) och bättre felhantering, som att ge användaren återkoppling vid försök att lägga till en tom todo. Det finns också utrymme för förbättringar i CSS-strukturen genom att överväga ytterligare separation av stildefinitioner för ökad modularitet.
+1. Just nu finns det inte möjlighet att sortera todos i olika ordningar (exempelvis alfabetisk). Man kan lägga till ett sorteringsalternativ för användarvänlighet.
+2. Todo-komponents klasser bör ligga i en egen fil än att delas över flera css filer för bättre läsbarhet och underhåll.
+3. Att ha mer meningsfulla klassnamn kan ytterligare förbättra läsbarheten av CSS-koden.
+4. Det är viktigt att virtuellt skapa en hälsosam användarupplevelse, därmed kan några enhetstester eller interaktionstester se till att behandling av ändringar på listan är smidig och utan buggar.
